@@ -1,0 +1,10 @@
+
+采用sqlite 数据 
+为了创建表单的方便可以使用sqlalchemy模块(sudo apt-get install python-sqlalchemy)
+elixir 建立数据表单
+
+Qfiledialog
+
+pyside-uic mktec.ui -o ui.py
+
+PRIMARY KEY (id)  id
