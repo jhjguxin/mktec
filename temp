@@ -8,3 +8,10 @@ Qfiledialog
 pyside-uic mktec.ui -o ui.py
 
 PRIMARY KEY (id)  id
+
+/home/jhjguxin/Desktop/1_223GXS4.jpg
+
+from PySide.QtCore import *
+QFile.copy(u'/home/jhjguxin/Desktop/1.jpg',u'/home/jhjguxin/Desktop/pyside/mktec/upload/1.jpg')
+fi = QFileInfo("/home/jhjguxin/Desktop/1.jpg")
+fi.fileName()

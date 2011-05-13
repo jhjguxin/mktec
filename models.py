@@ -3,23 +3,24 @@
 ############################
 from elixir import *
 from datetime import datetime
+import os
 
 metadata.bind = "sqlite:///mktec.db"
 metadata.bind.echo = True
 class User(Entity):
 #  user_id = Field(Integer, primary_key=True)
-  user_name = Field(Unicode(16), unique=True,required=True)
+  username = Field(Unicode(40), unique=True,required=True)
 #  email_address = Field(Unicode(255), unique=True)
   password = Field(Unicode(40))
   user_created = Field(DateTime, default=datetime.now)
   using_options(tablename='tg_user')
     
   def __repr__(self):
-    return '<User "%s",created_on:%s>' % (self.user_name, self.user_created)
+    return '<User "%s",created_on:%s>' % (self.username, self.user_created)
 
 class Article(Entity):
   "the class of article"
-  number = Field(Integer)
+  number = Field(Integer,unique=True,required=True)
   name=Field(Unicode(16))
   image=Field(Unicode(40))
   price=Field(Float)
@@ -27,9 +28,9 @@ class Article(Entity):
   using_options(tablename='tg_article')
   def __repr__(self):
     return '<Article "%s",created_on:%s>' % (self.name, self.created)
-  def save(self,filename,upload='upload'):
-    self.image=upload+filename
-    super(Article, self).save()
+ # def save(self,filename,upload='upload'):
+    #self.image=upload+filename
+    #super(Article, self).save()
 
 class Traded_article(Entity):
   "the class of article"
@@ -40,7 +41,8 @@ class Traded_article(Entity):
   using_options(tablename='tg_trade')
   def __repr__(self):
     return '<Trade "%s",created_on:%s>' % (self.name, self.created)
-if __name__ == '__main__':
-  print "创建数据库..."
-  setup_all()
-  create_all()
+
+
+setup_all()
+if not os.path.exists('mktec.db'):
+    create_all()
