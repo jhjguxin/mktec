@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'mktec.ui'
 #
-# Created: Fri May 13 11:28:31 2011
+# Created: Sat May 14 23:45:06 2011
 #      by: pyside-uic 0.2.8 running on PySide 1.0.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -65,12 +65,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.trade_clear_pushButton = QtGui.QPushButton(self.layoutWidget1)
-        self.trade_clear_pushButton.setObjectName("trade_clear_pushButton")
-        self.verticalLayout_2.addWidget(self.trade_clear_pushButton)
+        self.trade_empty_pushButton = QtGui.QPushButton(self.layoutWidget1)
+        self.trade_empty_pushButton.setObjectName("trade_empty_pushButton")
+        self.verticalLayout_2.addWidget(self.trade_empty_pushButton)
         self.trade_article_tableWidget = QtGui.QTableWidget(self.layoutWidget1)
         self.trade_article_tableWidget.setObjectName("trade_article_tableWidget")
-        self.trade_article_tableWidget.setColumnCount(3)
+        self.trade_article_tableWidget.setColumnCount(4)
         self.trade_article_tableWidget.setRowCount(0)
         item = QtGui.QTableWidgetItem()
         self.trade_article_tableWidget.setHorizontalHeaderItem(0, item)
@@ -78,6 +78,8 @@ class Ui_MainWindow(object):
         self.trade_article_tableWidget.setHorizontalHeaderItem(1, item)
         item = QtGui.QTableWidgetItem()
         self.trade_article_tableWidget.setHorizontalHeaderItem(2, item)
+        item = QtGui.QTableWidgetItem()
+        self.trade_article_tableWidget.setHorizontalHeaderItem(3, item)
         self.verticalLayout_2.addWidget(self.trade_article_tableWidget)
         self.horizontalLayout_10 = QtGui.QHBoxLayout()
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
@@ -99,9 +101,9 @@ class Ui_MainWindow(object):
         self.label_5 = QtGui.QLabel(self.layoutWidget1)
         self.label_5.setObjectName("label_5")
         self.horizontalLayout_11.addWidget(self.label_5)
-        self.trade_discountrate_label = QtGui.QLabel(self.layoutWidget1)
-        self.trade_discountrate_label.setObjectName("trade_discountrate_label")
-        self.horizontalLayout_11.addWidget(self.trade_discountrate_label)
+        self.trade_discountrate_lineEdit = QtGui.QLineEdit(self.layoutWidget1)
+        self.trade_discountrate_lineEdit.setObjectName("trade_discountrate_lineEdit")
+        self.horizontalLayout_11.addWidget(self.trade_discountrate_lineEdit)
         self.verticalLayout_2.addLayout(self.horizontalLayout_11)
         self.horizontalLayout_12 = QtGui.QHBoxLayout()
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
@@ -162,9 +164,9 @@ class Ui_MainWindow(object):
         self.trade_update_pushButton = QtGui.QPushButton(self.verticalLayoutWidget)
         self.trade_update_pushButton.setObjectName("trade_update_pushButton")
         self.horizontalLayout_9.addWidget(self.trade_update_pushButton)
-        self.trade_clear_pushButton_2 = QtGui.QPushButton(self.verticalLayoutWidget)
-        self.trade_clear_pushButton_2.setObjectName("trade_clear_pushButton_2")
-        self.horizontalLayout_9.addWidget(self.trade_clear_pushButton_2)
+        self.trade_clear_pushButton = QtGui.QPushButton(self.verticalLayoutWidget)
+        self.trade_clear_pushButton.setObjectName("trade_clear_pushButton")
+        self.horizontalLayout_9.addWidget(self.trade_clear_pushButton)
         self.verticalLayout_5.addLayout(self.horizontalLayout_9)
         self.imgview1 = QtGui.QLabel(self.groupBox)
         self.imgview1.setGeometry(QtCore.QRect(30, 210, 321, 111))
@@ -283,7 +285,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addLayout(self.horizontalLayout_19)
         self.trade_history_tableWidget = QtGui.QTableWidget(self.verticalLayoutWidget_4)
         self.trade_history_tableWidget.setObjectName("trade_history_tableWidget")
-        self.trade_history_tableWidget.setColumnCount(6)
+        self.trade_history_tableWidget.setColumnCount(7)
         self.trade_history_tableWidget.setRowCount(0)
         item = QtGui.QTableWidgetItem()
         self.trade_history_tableWidget.setHorizontalHeaderItem(0, item)
@@ -297,6 +299,8 @@ class Ui_MainWindow(object):
         self.trade_history_tableWidget.setHorizontalHeaderItem(4, item)
         item = QtGui.QTableWidgetItem()
         self.trade_history_tableWidget.setHorizontalHeaderItem(5, item)
+        item = QtGui.QTableWidgetItem()
+        self.trade_history_tableWidget.setHorizontalHeaderItem(6, item)
         self.verticalLayout_4.addWidget(self.trade_history_tableWidget)
         self.horizontalLayout_20 = QtGui.QHBoxLayout()
         self.horizontalLayout_20.setObjectName("horizontalLayout_20")
@@ -350,24 +354,26 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">产品名称：</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.article_name_label.setText(QtGui.QApplication.translate("MainWindow", "name", None, QtGui.QApplication.UnicodeUTF8))
-        self.trade_clear_pushButton.setText(QtGui.QApplication.translate("MainWindow", "清空", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_empty_pushButton.setText(QtGui.QApplication.translate("MainWindow", "清空", None, QtGui.QApplication.UnicodeUTF8))
         self.trade_article_tableWidget.horizontalHeaderItem(0).setText(QtGui.QApplication.translate("MainWindow", "编码", None, QtGui.QApplication.UnicodeUTF8))
-        self.trade_article_tableWidget.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("MainWindow", "价格", None, QtGui.QApplication.UnicodeUTF8))
-        self.trade_article_tableWidget.horizontalHeaderItem(2).setText(QtGui.QApplication.translate("MainWindow", "数量", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_article_tableWidget.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("MainWindow", "名称", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_article_tableWidget.horizontalHeaderItem(2).setText(QtGui.QApplication.translate("MainWindow", "交易价格", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_article_tableWidget.horizontalHeaderItem(3).setText(QtGui.QApplication.translate("MainWindow", "数量", None, QtGui.QApplication.UnicodeUTF8))
         self.label_12.setText(QtGui.QApplication.translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">总额:</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
-        self.trade_total_label_2.setText(QtGui.QApplication.translate("MainWindow", "0", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_total_label_2.setText(QtGui.QApplication.translate("MainWindow", "0.00", None, QtGui.QApplication.UnicodeUTF8))
         self.label_14.setText(QtGui.QApplication.translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">已付:</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_payed_lineEdit.setText(QtGui.QApplication.translate("MainWindow", "0.00", None, QtGui.QApplication.UnicodeUTF8))
         self.label_5.setText(QtGui.QApplication.translate("MainWindow", "折扣率：", None, QtGui.QApplication.UnicodeUTF8))
-        self.trade_discountrate_label.setText(QtGui.QApplication.translate("MainWindow", "1.0", None, QtGui.QApplication.UnicodeUTF8))
-        self.trade_check_pushButton.setText(QtGui.QApplication.translate("MainWindow", "结帐", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_discountrate_lineEdit.setText(QtGui.QApplication.translate("MainWindow", "1.0", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_check_pushButton.setText(QtGui.QApplication.translate("MainWindow", "算帐/结帐", None, QtGui.QApplication.UnicodeUTF8))
         self.label_15.setText(QtGui.QApplication.translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -406,7 +412,7 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">事件通知</span></p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
         self.trade_update_pushButton.setText(QtGui.QApplication.translate("MainWindow", "更新", None, QtGui.QApplication.UnicodeUTF8))
-        self.trade_clear_pushButton_2.setText(QtGui.QApplication.translate("MainWindow", "删除", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_clear_pushButton.setText(QtGui.QApplication.translate("MainWindow", "删除", None, QtGui.QApplication.UnicodeUTF8))
         self.imgview1.setText(QtGui.QApplication.translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -440,6 +446,7 @@ class Ui_MainWindow(object):
         self.trade_history_tableWidget.horizontalHeaderItem(3).setText(QtGui.QApplication.translate("MainWindow", "交易价格", None, QtGui.QApplication.UnicodeUTF8))
         self.trade_history_tableWidget.horizontalHeaderItem(4).setText(QtGui.QApplication.translate("MainWindow", "折扣率", None, QtGui.QApplication.UnicodeUTF8))
         self.trade_history_tableWidget.horizontalHeaderItem(5).setText(QtGui.QApplication.translate("MainWindow", "数量", None, QtGui.QApplication.UnicodeUTF8))
+        self.trade_history_tableWidget.horizontalHeaderItem(6).setText(QtGui.QApplication.translate("MainWindow", "日期", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setText(QtGui.QApplication.translate("MainWindow", "数目:", None, QtGui.QApplication.UnicodeUTF8))
         self.trade_number_label.setText(QtGui.QApplication.translate("MainWindow", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.label_8.setText(QtGui.QApplication.translate("MainWindow", "总价:", None, QtGui.QApplication.UnicodeUTF8))

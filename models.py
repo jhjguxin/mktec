@@ -34,9 +34,12 @@ class Article(Entity):
 
 class Traded_article(Entity):
   "the class of article"
+  number= Field(Integer)
   name=Field(Unicode(16))
-  discount=Field(Float)
+  trade_number=Field(Integer,default=0)
   tr_price=Field(Float)
+  discount=Field(Float)
+  count=Field(Integer,default=0)
   created = Field(DateTime, default=datetime.now)
   using_options(tablename='tg_trade')
   def __repr__(self):

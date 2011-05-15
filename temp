@@ -6,6 +6,7 @@ elixir 建立数据表单
 Qfiledialog
 
 pyside-uic mktec.ui -o ui.py
+pyside-uic login.ui -o login.py
 
 PRIMARY KEY (id)  id
 
@@ -15,3 +16,34 @@ from PySide.QtCore import *
 QFile.copy(u'/home/jhjguxin/Desktop/1.jpg',u'/home/jhjguxin/Desktop/pyside/mktec/upload/1.jpg')
 fi = QFileInfo("/home/jhjguxin/Desktop/1.jpg")
 fi.fileName()
+
+Article.query.order_by(Article.name)[:1]#根据排序获取最后一个但是返回的是列表
+session.query(Traded_article.trade_number)[-1:]获取trade_number最后一个（并未排序）
+
+Traded_article.query.filter_by(trade_number=trade_number).all()
+
+#a.created.year,a.created.month,a.created.day
+sdate=PySide.QtCore.QDateTime(2011, 4, 15, 0, 0, 0, 0, 0)
+#==========================false===========================
+sdate.date().day()
+15
+type(sdate.date().day())
+<type 'int'>
+st_year=sdate.date().year()
+st_month=sdate.date().month()
+st_day=sdate.date().day()
+
+en_year=edate.date().year()
+en_month=edate.date().month()
+en_day=edate.date().day()
+
+Traded_article.query.filter_by(st_year<=created.year<=en_year,st_month<=created.month<=en_mouth,st_day<=created.day<=en_day).all()
+==================================================================
+>>> if datetime.now()-sdate.toPython():
+...     print "a"
+... 
+a
+>>> if not datetime.now()-sdate.toPython():
+...   print "a"
+... 
+>>> 

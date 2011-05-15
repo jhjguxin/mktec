@@ -135,7 +135,7 @@ p, li { white-space: pre-wrap; }
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QPushButton" name="trade_clear_pushButton">
+         <widget class="QPushButton" name="trade_empty_pushButton">
           <property name="text">
            <string>清空</string>
           </property>
@@ -150,7 +150,12 @@ p, li { white-space: pre-wrap; }
           </column>
           <column>
            <property name="text">
-            <string>价格</string>
+            <string>名称</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>交易价格</string>
            </property>
           </column>
           <column>
@@ -176,7 +181,7 @@ p, li { white-space: pre-wrap; }
           <item>
            <widget class="QLabel" name="trade_total_label_2">
             <property name="text">
-             <string>0</string>
+             <string>0.00</string>
             </property>
            </widget>
           </item>
@@ -196,7 +201,11 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="trade_payed_lineEdit"/>
+           <widget class="QLineEdit" name="trade_payed_lineEdit">
+            <property name="text">
+             <string>0.00</string>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QLabel" name="label_5">
@@ -206,7 +215,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="trade_discountrate_label">
+           <widget class="QLineEdit" name="trade_discountrate_lineEdit">
             <property name="text">
              <string>1.0</string>
             </property>
@@ -219,7 +228,7 @@ p, li { white-space: pre-wrap; }
           <item>
            <widget class="QPushButton" name="trade_check_pushButton">
             <property name="text">
-             <string>结帐</string>
+             <string>算帐/结帐</string>
             </property>
            </widget>
           </item>
@@ -362,7 +371,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="trade_clear_pushButton_2">
+           <widget class="QPushButton" name="trade_clear_pushButton">
             <property name="text">
              <string>删除</string>
             </property>
@@ -633,6 +642,11 @@ p, li { white-space: pre-wrap; }
          <column>
           <property name="text">
            <string>数量</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>日期</string>
           </property>
          </column>
         </widget>
