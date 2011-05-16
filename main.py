@@ -80,8 +80,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def search_Trade(self):#先查找编号，如果失败则按时间显示
         #pdb.set_trace()
         sdate = self.start_dateEdit.dateTime().toPython()
-        edate = self.end_dateEdit.dateTime().toPython()
-
+        edate = self.end_dateEdit.dateTime().addDays(1).toPython()#截止时间到第二天凌晨
 
         trade_number=self.search_tradenumber_lineEdit.text()
 
@@ -97,19 +96,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 searchMsgBox = QMessageBox()
                 searchMsgBox.setText(u"请输入数字格式的交易编号！下面显示的是按时间检索的结果")
                 searchMsgBox.exec_()
-                #pdb.set_trace()
+
                 all_traded_article = Traded_article.query.all()
                 for a in all_traded_article:
-                    if a.created-sdate and edate-a.created:
+                    if a.created>=sdate and edate>=a.created:
                         self.search_items.append(a)
-                        self.trade_history_fiter=True
+                if self.search_items!=[]:self.trade_history_fiter=True
                 self.trade_history_tableWidget_query()
         else:
             all_traded_article = Traded_article.query.all()
+            pdb.set_trace()
             for a in all_traded_article:
-                if a.created-sdate and edate-a.created:
+                if a.created>=sdate and edate>=a.created:
                     self.search_items.append(a)
-                    self.trade_history_fiter=True
+            if self.search_items!=[]:self.trade_history_fiter=True
             self.trade_history_tableWidget_query()
 
     def trade_history_tableWidget_query(self):
@@ -159,7 +159,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.trade_history_tableWidget.setItem(row_id,6, item_created)            
 
             row_id += 1
-        average_price=float(totals)/float(counts)
+        if counts!=0:average_price=float(totals)/float(counts)
         self.trade_number_label.setText(unicode(counts))
         self.trade_total_label.setText(u"%0.2f"%(totals))
         self.average_price_label.setText(u"%0.2f"%(average_price))
