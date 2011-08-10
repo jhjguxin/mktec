@@ -1,6 +1,7 @@
-
 采用sqlite 数据 
 为了创建表单的方便可以使用sqlalchemy模块(sudo apt-get install python-sqlalchemy)
+python-elixir - Declarative Mapper for SQLAlchemy
+sudo apt-get install python-elixir
 elixir 建立数据表单
 
 Qfiledialog
