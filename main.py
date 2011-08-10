@@ -105,7 +105,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.trade_history_tableWidget_query()
         else:
             all_traded_article = Traded_article.query.all()
-            pdb.set_trace()
+            #pdb.set_trace()
             for a in all_traded_article:
                 if a.created>=sdate and edate>=a.created:
                     self.search_items.append(a)
